@@ -2,6 +2,7 @@ import { React, useRef, useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import { Form, Button, Card, Alert } from "react-bootstrap";
 import { Link, useNavigate, useLocation } from "react-router-dom";
+import MyNavbar from "../components/Navbar"; 
 
 
 export default function () {
@@ -30,6 +31,7 @@ export default function () {
   
     return (
       <>
+      <MyNavbar /> 
         <Card>
           <Card.Body>
             <h2 className="text-center mb-4">Log In</h2>
