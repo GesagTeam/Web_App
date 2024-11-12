@@ -1,0 +1,112 @@
+/* Container adjustments */
+.signin-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+
+.R {
+  flex: 1;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.25) 0%,    /* Dark shade at the top */
+    rgba(0, 0, 0, 0.2) 10%,   /* Medium shade */
+    rgba(0, 0, 0, 0.02) 150px,
+    rgba(0, 0, 0, 0) 100%        /* Fully transparent at the bottom */
+  );
+  background-repeat: no-repeat;
+  background-position: top;
+  position: relative;
+}
+
+
+
+/* Adjust form section */
+.signin-form-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px; /* Decreased width */
+  padding: 15px; /* Reduced padding */
+  height: 100vh;
+  overflow-y: auto;
+}
+
+
+.line-textT {
+  text-align: center;
+  position: relative;
+  margin: 10px 0;
+}
+
+.line-textT::before,
+.line-textT::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 40%;
+  border-top: 1px solid grey;
+}
+
+.line-textT::before {
+  left: 0;
+}
+
+.line-textT::after {
+  right: 0;
+}
+
+
+.text-center {
+  margin-top: 0;
+  font-size: 1.2rem; /* Smaller font size */
+}
+
+.background-image-section {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.centered-content h1 {
+  font-size: 4rem; /* Smaller main heading */
+}
+
+.centered-content p {
+  font-size: 1.5rem; /* Smaller subtext */
+}
+
+/* Smaller input group and button */
+.InputGroup, .FormControl {
+  font-size: 0.85rem; /* Smaller input font */
+}
+
+.svg-image {
+  width: 200px;
+  height: 135px; /* Scaled down to fit */
+}
+
+/* Social icon adjustments */
+.social-icons img {
+  width: 40px; /* Reduced icon size */
+  height: auto;
+}
+
+/* Media query for very small screens */
+@media (max-width: 720px) {
+  .signin-container {
+    flex-direction: column;
+  }
+  .background-image-section {
+    display: none;
+  }
+  .signin-form-section {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Card, Alert, Button, Container } from "react-bootstrap";
 import { useAuth } from "../context/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
-import MyNavbar from "../components/Navbar";
+import MyNavbar from "./navbar/Navbar";
 
 export default function Dashboard() {
   const [error, setError] = useState("");

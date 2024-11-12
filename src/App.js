@@ -1,33 +1,38 @@
-import React, { useState } from "react"; // Import useState
+import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Container } from "react-bootstrap";
-import Signup from "./components/Signup";
+import Signup from "./components/Signup/Signup";
 import ForgetPassword from "./components/ForgetPassword";
 import UpdateProfile from "./components/UpdateProfile";
 import Dashboard from "./components/DashBoard";
-import Signin from "./components/Signin";
-import VerifyEmail from "./components/VerifyEmail"; // Add VerifyEmail component
+import Signin from "./components/Signin/Signin";
+import VerifyEmail from "./components/EmailVerification/VerifyEmail";
+import Home from "./components/Home/Home"; // Import Home component
 import AuthProvider from "./context/AuthContext";
 import RequireAuth from "./context/RequireAuth";
+import MyNavbar from "./components/navbar/Navbar"; // Import your Navbar
+import ResetPassword from "./components/resetPassword/ResetPassword";
 
 const App = () => {
-  // Define view state and setView function
-  const [view, setView] = useState(""); 
+  const [loading, setLoading] = useState(false); // State for loading
 
   return (
-    <Container
-      className="d-flex align-items-center justify-content-center"
-      style={{ minHeight: "100vh" }}
-    >
-      <div className="w-100" style={{ maxWidth: "400px" }}>
-        <Router>
-          <AuthProvider>
+    <div className="app-container">
+      <Router>
+        <AuthProvider>
+          <MyNavbar /> {/* Always render the navbar */}
+
+          {/* Show loading indicator when loading */}
+          {loading ? (
+            <div className="loading-indicator">
+              Loading...
+            </div>
+          ) : (
             <Routes>
               <Route
                 path="/"
                 element={
                   <RequireAuth>
-                    <Dashboard />
+                    <Dashboard setLoading={setLoading} />
                   </RequireAuth>
                 }
               />
@@ -35,19 +40,22 @@ const App = () => {
                 path="/update-profile"
                 element={
                   <RequireAuth>
-                    <UpdateProfile />
+                    <UpdateProfile setLoading={setLoading} />
                   </RequireAuth>
                 }
               />
-              <Route path="/signup" element={<Signup setView={setView} />} />
-              <Route path="/login" element={<Signin />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/login" element={<Signin setLoading={setLoading} />} />
               <Route path="/forgot-password" element={<ForgetPassword />} />
-              <Route path="/verify-email" element={<VerifyEmail />} /> {/* Add this line */}
+              <Route path="/verifyEmail" element={<VerifyEmail setLoading={setLoading} />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/resetPassword" element={<ResetPassword />} />
+
             </Routes>
-          </AuthProvider>
-        </Router>
-      </div>
-    </Container>
+          )}
+        </AuthProvider>
+      </Router>
+    </div>
   );
 };
 

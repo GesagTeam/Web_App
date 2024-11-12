@@ -1,0 +1,65 @@
+/* Remove default padding and margin from the body and html */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure the navbar has increased height and elements are aligned correctly */
+.custom-navbar {
+  background-color: white !important;
+  display: flex;
+  align-items: center;
+  height: 75px;
+  border-bottom: 0.5px solid rgba(129, 129, 129, 0.7);
+  margin: 0 !important; /* Remove all margins */
+  padding: 0 !important; /* Remove all padding */
+}
+
+
+/* Ensure the nav items (links) are vertically centered */
+.custom-navbar .navbar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Styling for the navbar links */
+.navbar-nav .nav-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-bottom: 18px;
+}
+
+/* Ensure the logo is positioned 16px from the left edge of the screen */
+.custom-navbar .navbar-brand {
+  /* Ensures the logo is 16px from the left of the screen */
+}
+
+/* Adjust the button container for proper vertical alignment */
+.profileBtnContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* Add top and bottom margins to the button */
+.profileBtn {
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 100%;
+}
+
+/* Ensure the logo at the top-left has a fixed margin */
+.custom-navbar .navbar-brand img {
+  width: 225px; 
+  height: 75px;
+}
+
+.container {
+  margin-left: 0 !important;
+  padding: 0 !important;
+  margin-right: 0 !important;
+}

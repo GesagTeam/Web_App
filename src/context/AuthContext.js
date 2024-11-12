@@ -1,3 +1,4 @@
+import React, { useContext, useState, useEffect, createContext } from "react";
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
@@ -6,10 +7,17 @@ import {
   signInWithEmailAndPassword,
   signOut,
   updateEmail,
-  updatePassword,
+  updatePassword
 } from "firebase/auth";
-import { React, useContext, useState, useEffect, createContext } from "react";
-import auth from "../firebase";
+import {
+  collection,
+  doc,
+  setDoc,
+  getDocs,
+  query,
+  where
+} from "firebase/firestore";
+import { auth, db } from "../firebase"; // Import both auth and db
 
 const AuthContext = createContext();
 
@@ -17,10 +25,34 @@ const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
 
-  // Signup with email verification
-  const signup = async (email, password) => {
+  // Signup with email verification and store additional user data
+  const signup = async (email, password, username, birthday) => {
+    // Check for undefined or empty values
+    if (!username || !birthday) {
+      throw new Error("Please provide both a username and a birthday.");
+    }
+
+    // Check if the username already exists
+    const q = query(collection(db, "users"), where("username", "==", username));
+    const querySnapshot = await getDocs(q);
+
+    if (!querySnapshot.empty) {
+      throw new Error("Username already exists");
+    }
+
+    // Proceed with account creation if username is available
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-    await sendEmailVerification(userCredential.user); // Send verification email
+    await sendEmailVerification(userCredential.user);
+
+    // Save user data to Firestore
+    await setDoc(doc(db, "users", userCredential.user.uid), {
+      uid: userCredential.user.uid,
+      email: userCredential.user.email,
+      username: username,
+      birthday: birthday,
+      createdAt: new Date(),
+    });
+
     return userCredential;
   };
 
@@ -44,19 +76,12 @@ const AuthProvider = ({ children }) => {
     return updatePassword(auth.currentUser, password);
   };
 
-  // Helper function to check if the user's email is verified
-  const isEmailVerified = () => {
-    return auth.currentUser ? auth.currentUser.emailVerified : false;
-  };
-
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setCurrentUser(user);
       setLoading(false);
     });
-    return () => {
-      unsubscribe();
-    };
+    return () => unsubscribe();
   }, []);
 
   return (
@@ -69,7 +94,6 @@ const AuthProvider = ({ children }) => {
         resetPassword,
         updateUserEmail,
         updateUserPassword,
-        isEmailVerified,  // Added the function to check email verification status
       }}
     >
       {!loading && children}
@@ -80,4 +104,5 @@ const AuthProvider = ({ children }) => {
 export const useAuth = () => {
   return useContext(AuthContext);
 };
+
 export default AuthProvider;
