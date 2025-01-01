@@ -1,0 +1,304 @@
+/* General Body Styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: flex-start; /* Aligns content to the left */
+  align-items: flex-start; /* Ensures alignment from the top */
+  height: 100vh; /* Full viewport height */
+  overflow-y: scroll; /* Allows vertical scrolling */
+}
+
+/* Filter Container */
+.filter-container {
+  margin-left: 0; /* Removes extra margin */
+  padding-left: 16px;
+  padding-right: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 80px;
+  width: 380px;
+  height: auto; /* Adjust height dynamically based on content */
+  background-color: white; /* Ensure a clean background */
+  border-radius: 10px;
+  border: 1px solid #FF8D00;
+}
+
+.firstContainer{
+
+  position: relative;
+  right: 16px;
+
+}
+
+/* Filter Header */
+.filter-header {
+  padding-top: 8px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0px;
+  background-color: #FF8D00;
+  width: 140px;
+  height: 55px;
+  color: white;
+  border-radius: 10px 40px 0 0;
+}
+
+.filter-header h2 {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 21.18px;
+}
+
+.filter-icon {
+  font-size: 20px;
+  margin-right: 8px;
+}
+
+/* Warning Box */
+.filter-warning-box {
+  background-color: #FF8D00;
+  color: #fff;
+  padding: 12px;
+  border-radius: 0 10px 0 0;
+  margin-bottom: 16px;
+  width: 379px;
+}
+
+.filter-warning-box p {
+  margin: 0;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.filter-warning-icon img {
+  margin-left: 5px;
+  margin-right: 8px;
+  font-size: 18px;
+  height: 30px;
+  width: 30.4px;
+}
+
+.innerContent {
+  border: solid 1px white;
+  border-radius: 5px;
+}
+
+/* Dropdown Header */
+.dropdown-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 10px 16px;
+  border: 1px solid #FF8D00;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.dropdown-header:hover {
+  background-color: #fef8f0; /* Light orange hover effect */
+}
+
+/* Dropdown Title Styling */
+.dropdown-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: black; /* Black color */
+}
+
+.dropdown-subtitle {
+  font-size: 14px; /* Smaller size for "(state)" */
+  color: #ff8d00; /* Orange color */
+  margin-left: 4px;
+}
+
+/* Dropdown Arrow */
+.dropdown-arrow {
+  width: 16px;
+  height: 16px;
+  margin-left: 180px;
+  transition: transform 0.3s ease; /* Smooth rotation animation */
+}
+
+.dropdown-arrowTwo{
+
+  width: 16px;
+  height: 16px;
+  margin-left: 169px;
+  transition: transform 0.3s ease;
+
+}
+
+.dropdown-arrow.open {
+  transform: rotate(180deg); /* Rotates the arrow when dropdown is open */
+}
+
+.dropdown-arrowTwo.open {
+  transform: rotate(180deg); /* Rotates the arrow when dropdown is open */
+}
+
+/* Dropdown Default State */
+.dropdown-border {
+  border: none; /* No border when collapsed */
+  border-radius: 8px; /* Optional for rounded corners */
+  background-color: white; /* Ensure background consistency */
+  transition: height 2.5s ease, border 0.3s ease; /* Smooth transition for height and border */
+}
+
+/* Dropdown Expanded State */
+.dropdown-border.expanded {
+  border: 1px solid #FF8D00; /* Orange border when expanded */
+}
+
+
+/* Checkbox Group */
+/* Default state (no border) */
+.filter-checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: none;
+  transition: height 1.5s ease; /* Slower transition for smooth expansion */
+  padding-left: 10px;
+}
+
+/* Expanded state (border visible) */
+.filter-checkbox-group.expanded {
+ 
+  border: 1px solid #FF8D00; /* Orange border when expanded */
+  border-radius: 8px; /* Optional for rounded corners */
+}
+
+
+.checkbox-label {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, border 0.3s ease;
+}
+
+.checkbox-label:hover {
+  background-color: #fef8f0; /* Light orange hover background */
+}
+
+.checkbox-label input[type="checkbox"] {
+  accent-color: #FF8D00; /* Orange checkbox accent */
+}
+
+/* Selected Checkbox Styling */
+.checkbox-label input[type="checkbox"]:checked + span {
+  background-color: #FF8D00; /* Solid orange background when selected */
+  border: 1px solid #FF8D00; /* Orange border */
+  color: white; /* White text for contrast */
+}
+
+/* Filter Sections */
+.filter-section {
+  margin-bottom: 16px;
+  padding: 0; /* Ensures consistent spacing */
+}
+
+.filter-section h3 {
+  margin-bottom: 16px; /* Adjusted for consistency */
+  font-size: 26px;
+  color: black;
+}
+
+/* Filter Options */
+.filter-options {
+  padding-right: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two buttons per row */
+  gap: 10px; /* Space between buttons */
+}
+
+.filter-option {
+  padding: 6px 12px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.filter-option.selected {
+  color: #FF8D00;
+  border-color: #FF8D00;
+  background-color: #fff;
+}
+
+/* Price Slider */
+.filter-slider {
+  width: 100%;
+  accent-color: #FF8D00;
+  background-color: white;
+}
+
+/* Filter Actions */
+.filter-actions {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 15px;
+}
+
+.filter-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.filter-button.clear {
+  background-color: white;
+  color: #FF8D00;
+  border: 2px solid #FF8D00;
+  border-radius: 5px;
+}
+
+.filter-button.apply {
+  background-color: #FF8D00;
+  color: #fff;
+  width: 130px;
+}
+
+/* Hide the default checkbox */
+.checkbox-label input[type="checkbox"] {
+  display: none; /* Hides the default checkbox */
+}
+
+.hidden-checkbox {
+  display: none;
+}
+
+.custom-checkbox {
+  width: 18px;
+  height: 18px;
+  border: 1px solid #FF8D00;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+  background-color: white;
+}
+
+.custom-checkbox img {
+  width: 14px;
+  height: 14px;
+}
+
+
+
+.checkbox-label input[type="checkbox"]:checked + .custom-checkbox {
+  border-color: #FF8D00;
+  background-color: white;
+}

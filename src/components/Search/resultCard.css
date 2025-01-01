@@ -1,0 +1,70 @@
+.university-card-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  background: #fff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Adjust shadow here */
+  border-radius: 8px;
+  padding: 16px;
+  width: 613px;
+  height: 241px;
+  margin: 20px auto; /* Center the card with margin */
+  font-family: Arial, sans-serif;
+}
+
+/* Styling for the image */
+.university-card-image {
+  width: 201px;
+  height: 200px;
+  border-radius: 8px;
+  object-fit: cover;
+  align-self: center; 
+}
+
+/* Styling for the card details section */
+.university-card-details {
+  margin-left: 16px;
+  flex: 1;
+}
+
+.university-card-name {
+  font-size: 22px;
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+.university-card-location {
+  font-size: 19px;
+  color: gray;
+}
+
+.university-card-rank {
+  color: orange;
+  font-weight: bold;
+  margin: 4px 0 12px;
+}
+
+/* Styling for the information section */
+.university-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Space between items */
+}
+
+/* Styling for each information item (icon + text) */
+.university-card-info-item {
+  display: flex;
+  align-items: center; /* Align icon and text vertically */
+  gap: 8px; /* Space between icon and text */
+}
+
+.university-card-info-item p {
+  margin: 0;
+  font-size: 19px; /* Updated text size */
+  color: #333; /* Text color */
+}
+
+.university-card-icon {
+  width: 28px;
+  height: 26px;
+}

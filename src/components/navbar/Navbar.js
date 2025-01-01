@@ -6,7 +6,7 @@ import "./Navbar.css";
 
 export default function MyNavbar({ isHomeActive, isSearchActive, isLoginActive }) {
   return (
-    <Navbar expand="lg" fixed="top" className="custom-navbar">
+    <Navbar expand="lg" fixed="top" className="custom-navbar" >
       <Container fluid>
         <Navbar.Brand as={Link} to="/login" className="d-flex align-items-center">
           <img
