@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import "./filter.css";
 import { ReactComponent as ArrowTwo } from "../../images/arrowTwo.svg";
-import CheckboxCheckedIcon from "../../images/checkBox.svg"; // Import the SVG file
+import CheckboxCheckedIcon from "../../images/checkBox.svg";
 
 const Filter = () => {
   const [selectedInstituteTypes, setSelectedInstituteTypes] = useState([]);
@@ -35,54 +35,50 @@ const Filter = () => {
   const toggleLocationDropdown = () => {
     if (isLocationDropdownOpen) {
       setLocationDropdownHeight(0);
-      setTimeout(() => setIsLocationDropdownOpen(false), 1300);
+      setIsLocationDropdownOpen(false);
     } else {
       setIsLocationDropdownOpen(true);
-      setTimeout(() => {
-        const contentHeight = locationDropdownContentRef.current.scrollHeight;
-        setLocationDropdownHeight(contentHeight);
-      }, 20);
+      const contentHeight = locationDropdownContentRef.current.scrollHeight;
+      setLocationDropdownHeight(contentHeight);
     }
   };
 
   const toggleCoursesDropdown = () => {
     if (isCoursesDropdownOpen) {
       setCoursesDropdownHeight(0);
-      setTimeout(() => setIsCoursesDropdownOpen(false), 1300);
+      setIsCoursesDropdownOpen(false);
     } else {
       setIsCoursesDropdownOpen(true);
-      setTimeout(() => {
-        const contentHeight = coursesDropdownContentRef.current.scrollHeight;
-        setCoursesDropdownHeight(contentHeight);
-      }, 20);
+      const contentHeight = coursesDropdownContentRef.current.scrollHeight;
+      setCoursesDropdownHeight(contentHeight);
     }
   };
 
   return (
     <div className="filter-container">
       <div className="firstContainer">
-      <div className="filter-header">
-        <h2>
-          Filter{" "}
-          <span className="filter-icon">
-            <img src="../images/filter.svg" alt="Filter Icon" />
-          </span>
-        </h2>
+        <div className="filter-header">
+          <h2>
+            Filter{" "}
+            <span className="filter-icon">
+              <img src="../images/filter.svg" alt="Filter Icon" />
+            </span>
+          </h2>
+        </div>
+
+        <div className="filter-warning-box">
+          <div className="innerContent">
+            <p>
+              <span className="filter-warning-icon">
+                <img src="../images/filterTwo.svg" alt="Warning Icon" />
+              </span>{" "}
+              Select your institute type to get more filters and customize your
+              desired results.
+            </p>
+          </div>
+        </div>
       </div>
 
-      <div className="filter-warning-box">
-        <div className="innerContent">
-          <p>
-            <span className="filter-warning-icon">
-              <img src="../images/filterTwo.svg" alt="Warning Icon" />
-            </span>{" "}
-            Select your institute type to get more filters and customize your
-            desired results.
-          </p>
-        </div>
-        
-      </div>
-      </div>
       <div className="filter-section">
         <h3>Institute type</h3>
         <div className="filter-options">
@@ -137,8 +133,7 @@ const Filter = () => {
           style={{
             height: `${locationDropdownHeight}px`,
             overflow: "hidden",
-            transition: "height 1.5s ease",
-            border: isLocationDropdownOpen ? "1px solid #FF8D00" : "none",
+            transition: "height 0.3s ease", // Adjusted for faster transitions
           }}
         >
           <div ref={locationDropdownContentRef} className="filter-checkbox-group">
@@ -201,8 +196,7 @@ const Filter = () => {
           style={{
             height: `${coursesDropdownHeight}px`,
             overflow: "hidden",
-            transition: "height 1.5s ease",
-            border: isCoursesDropdownOpen ? "1px solid #FF8D00" : "none",
+            transition: "height 0.3s ease", // Adjusted for faster transitions
           }}
         >
           <div ref={coursesDropdownContentRef} className="filter-checkbox-group">

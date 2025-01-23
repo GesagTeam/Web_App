@@ -146,7 +146,7 @@ body {
   border: none; /* No border when collapsed */
   border-radius: 8px; /* Optional for rounded corners */
   background-color: white; /* Ensure background consistency */
-  transition: height 2.5s ease, border 0.3s ease; /* Smooth transition for height and border */
+  transition: height 0.1s ease, border 0.3s ease; /* Smooth transition for height and border */
 }
 
 /* Dropdown Expanded State */

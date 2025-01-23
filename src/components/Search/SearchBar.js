@@ -54,7 +54,7 @@ const SearchBar = () => {
                 iconLocation: "absolute", // Ensure absolute positioning
                 transition: "all 0.5s ease-in-out", // Smooth transition
                 left: "4px", // Horizontal position of the icon
-                bottom: "6.7px", // Vertical position from the bottom
+                bottom: "5.7px", // Vertical position from the bottom
                 marginLeft: "153px"
             }}
             iconTranslation="63px"

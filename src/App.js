@@ -44,6 +44,8 @@ const App = () => {
               <Route path="/Search" element={<UniversityCard />} />
               <Route path="/filter" element={<Filter/>} />
               <Route path="/searchbar" element={<SearchBar/>} />
+              
+          
 
             </Routes>
           )}

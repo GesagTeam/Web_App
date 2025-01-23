@@ -29,7 +29,7 @@ html, body {
   justify-content: center;
   align-items: center;
   height: 100%;
-  margin-bottom: 18px;
+
 }
 
 /* Ensure the logo is positioned 16px from the left edge of the screen */
@@ -43,6 +43,7 @@ html, body {
   justify-content: center;
   align-items: center;
   height: 100%;
+  margin-bottom: 0 !important;
 }
 
 /* Add top and bottom margins to the button */
