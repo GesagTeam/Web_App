@@ -1,0 +1,304 @@
+/* General styling for the form container */
+.form-container {
+    width: 320px;
+    height: auto;
+    background: #F1F1F1;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    font-family: Arial, sans-serif;
+    margin-top: 100px;
+}
+
+.stepOne {
+    height: 35px;
+    width: 35px;
+}
+
+.form-title {
+    color: black;
+    font-size: 17px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column; 
+    margin-bottom: 20px;
+}
+
+.profile-photo img {
+    width: 120px;
+    height: 120px;
+}
+
+.upload-btn {
+    background: none;
+    border: none;
+    color: #455A5C;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between icon and text */
+}
+
+.upload-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 10px 0 5px;
+    color: #474747;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+input, select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 1px;
+    font-size: 14px;
+    color: #474747;
+}
+
+input::placeholder {
+    color: #bbb;
+}
+
+.phone-input {
+    display: flex;
+    gap: 10px; /* Space between dropdown and input */
+}
+
+.phone-input select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 30%;
+}
+
+.phone-input input {
+    width: 70%;
+}
+
+.save-btn {
+    background: #F1F1F1;
+    color: #FF8D00;
+    border: 1.5px solid #FF8D00;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+    width: 60%;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.save-btn:hover {
+    background: #FF8D00;
+    color: #F1F1F1;
+}
+
+.parent-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.date-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.custom-date-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    padding-right: 40px; /* Space for the custom icon */
+    appearance: none;
+    background: white;
+    color: #474747;
+}
+
+.custom-date-input::-webkit-calendar-picker-indicator {
+    opacity: 0; /* Hides the default icon */
+    pointer-events: none;
+}
+
+.date-icon {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.custom-select-wrapper {
+    position: relative;
+}
+
+.custom-select-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+/* Styling for the custom select dropdown */
+.custom-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    background-color: white;
+    font-size: 14px;
+    color: #474747;
+    cursor: pointer;
+}
+
+/* Custom arrow inside the select */
+.custom-arrow {
+    position: absolute;
+    top: 45%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.custom-arrow img {
+    width: 12px;
+    transition: transform 0.3s ease;
+}
+
+.custom-select:focus + .custom-arrow img,
+.custom-select:active + .custom-arrow img {
+    transform: rotate(180deg);
+}
+
+/* Custom dropdown list container */
+.dropdown-container {
+    position: relative;
+    width: 100%;
+}
+
+/* Dropdown list styling */
+.dropdown-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    z-index: 10;
+}
+
+/* Common style for each dropdown list item */
+.dropdown-item {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for Nationality dropdown (green) */
+.custom-select[name="nationality"] option:hover {
+    background-color: green;
+    color: white;
+}
+
+/* Hover effect for Gender dropdown (red) */
+.custom-select[name="gender"] option:hover {
+    background-color: red;
+    color: white;
+}
+
+/* Hover effect for Marital Status dropdown (blue) */
+.custom-select[name="maritalStatus"] option:hover {
+    background-color: blue;
+    color: white;
+}
+/* Custom dropdown item styles with color changes on hover */
+.custom-dropdown-item {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for Gender options (green and red) */
+.custom-dropdown-item.green:hover {
+    background-color: green;
+    color: white;
+}
+
+.custom-dropdown-item.red:hover {
+    background-color: red;
+    color: white;
+}
+
+/* Hover effect for Nationality options (blue, yellow, purple) */
+.custom-dropdown-item.blue:hover {
+    background-color: blue;
+    color: white;
+}
+
+.custom-dropdown-item.yellow:hover {
+    background-color: yellow;
+    color: white;
+}
+
+.custom-dropdown-item.purple:hover {
+    background-color: purple;
+    color: white;
+}
+
+/* Hover effect for Marital Status options (pink and orange) */
+.custom-dropdown-item.pink:hover {
+    background-color: pink;
+    color: white;
+}
+
+.custom-dropdown-item.orange:hover {
+    background-color: orange;
+    color: white;
+}
+
+.maritalStatus{
+
+background-color: #F1F1F1;
+padding: 0;
+width: 100%;
+
+}
+
+#dropdown-basic-button{
+    width: 100%;
+}
+
+.dropdown-menu{
+width: 100%;
+transform: translate3d(0px, -120px, 0px);
+}

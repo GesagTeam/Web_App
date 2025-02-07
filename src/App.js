@@ -11,6 +11,8 @@ import ResetPassword from "./components/resetPassword/ResetPassword";
 import UniversityCard from "./components/Search/resultCard";
 import Filter from "./components/Filter/filter";
 import SearchBar from "./components/Search/SearchBar";
+import LeftSide from "./components/Profile/leftSide";
+import EducationDetails from "./components/Profile/EducationDetails";
 
 const App = () => {
   const [loading, setLoading] = useState(false); // State for loading
@@ -44,8 +46,10 @@ const App = () => {
               <Route path="/Search" element={<UniversityCard />} />
               <Route path="/filter" element={<Filter/>} />
               <Route path="/searchbar" element={<SearchBar/>} />
-              
-          
+              <Route path="/profileLeft" element={<LeftSide/>}/>
+              <Route path="/EducationDetails" element={<EducationDetails/>}/>
+
+              EducationDetails
 
             </Routes>
           )}
